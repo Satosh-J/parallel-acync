@@ -7,14 +7,14 @@ const urls = [
   'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/2',
   'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/3',
   'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/4',
-  'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/3',
-  'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/4',
-  'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/3',
-  'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/4',
-  'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/3',
-  'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/4',
-  'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/3',
-  'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/4',
+  'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/5',
+  'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/6',
+  'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/7',
+  'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/8',
+  'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/9',
+  'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/10',
+  'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/11',
+  'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/12',
 ]
 async function runInParallel(urls: string[], concurrency: number): Promise<string[]> {
   return async.mapLimit(
