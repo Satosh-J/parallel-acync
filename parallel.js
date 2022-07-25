@@ -37,44 +37,55 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 var axios_1 = require("axios");
-var async_1 = require("async");
+var async = require("async");
 var urls = [
     'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/1',
     'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/2',
     'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/3',
     'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/4',
+    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/3',
+    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/4',
+    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/3',
+    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/4',
+    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/3',
+    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/4',
+    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/3',
+    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/4',
 ];
 function runInParallel(urls, concurrency) {
     return __awaiter(this, void 0, void 0, function () {
+        var _this = this;
         return __generator(this, function (_a) {
-            return [2 /*return*/, async_1["default"].mapLimit(urls, concurrency, function (url) {
-                    getFruit(url);
-                }, function (err, results) {
+            return [2 /*return*/, async.mapLimit(urls, concurrency, function (url, callback) { return __awaiter(_this, void 0, void 0, function () {
+                    var res, e_1;
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0:
+                                _a.trys.push([0, 2, , 3]);
+                                return [4 /*yield*/, axios_1["default"].get(url)];
+                            case 1:
+                                res = _a.sent();
+                                console.log({ data: res.data });
+                                callback(null, res.data);
+                                return [3 /*break*/, 3];
+                            case 2:
+                                e_1 = _a.sent();
+                                callback(e_1, null);
+                                return [3 /*break*/, 3];
+                            case 3: return [2 /*return*/];
+                        }
+                    });
+                }); }, function (err, results) {
                     // completion function
                     if (!err) {
-                        return results;
+                        console.log({ results: results });
+                        // return results
                     }
                     else {
                         // handle error here
                         console.log(err);
                     }
                 })];
-        });
-    });
-}
-function getFruit(url) {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, axios_1["default"].get(url).then(function (response) {
-                        console.log(response.data);
-                    })["catch"](function (error) {
-                        console.log({ error: error.code });
-                    })];
-                case 1:
-                    _a.sent();
-                    return [2 /*return*/];
-            }
         });
     });
 }
