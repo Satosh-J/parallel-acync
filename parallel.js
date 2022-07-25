@@ -43,14 +43,14 @@ var urls = [
     'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/2',
     'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/3',
     'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/4',
-    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/3',
-    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/4',
-    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/3',
-    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/4',
-    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/3',
-    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/4',
-    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/3',
-    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/4',
+    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/5',
+    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/6',
+    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/7',
+    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/8',
+    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/9',
+    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/10',
+    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/11',
+    'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/12',
 ];
 function runInParallel(urls, concurrency) {
     return __awaiter(this, void 0, void 0, function () {
@@ -65,7 +65,7 @@ function runInParallel(urls, concurrency) {
                                 return [4 /*yield*/, axios_1["default"].get(url)];
                             case 1:
                                 res = _a.sent();
-                                console.log({ data: res.data });
+                                console.log({ data: res.data }); // To check concurrency, it sends amount of "concurrency" request at the same time.
                                 callback(null, res.data);
                                 return [3 /*break*/, 3];
                             case 2:

@@ -2,6 +2,8 @@
 import axios from 'axios'
 var async = require("async");
 
+
+// For the test assignment, create mock api endpoints.
 const urls = [
   'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/1',
   'https://62ddfee6ccdf9f7ec2cf75a0.mockapi.io/fruits/2',
@@ -23,7 +25,7 @@ async function runInParallel(urls: string[], concurrency: number): Promise<strin
     async (url: string, callback: (e: Error, result: any) => void) => {
       try {
         const res = await axios.get(url)
-        console.log({ data: res.data })
+        console.log({ data: res.data }) // To check concurrency, it sends amount of "concurrency" request at the same time.
         callback(null, res.data)
       } catch (e) {
         callback(e, null)
